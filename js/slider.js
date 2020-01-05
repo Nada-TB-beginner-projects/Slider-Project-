@@ -32,7 +32,7 @@ play=document.getElementById('slider-toggle');
 next=document.getElementById('slider-next');
 aleatoire=document.getElementById('slider-random');
 picture= document.getElementById('image');
-imageLegend=document.getElementsByTagName('figcaption');
+imageLegend=document.querySelector('.slider figcaption');
 btnPlay=document.querySelector('#slider-toggle i');
 
 /*************************************************************************************************/
@@ -47,7 +47,7 @@ function show(){
 function round(){
 	imagePosition++;
   	picture.src=slides[imagePosition].image;
-  	imageLegend=slides[imagePosition].legend;
+  	imageLegend.textContent=slides[imagePosition].legend;
   	if(imagePosition===5){
   		imagePosition=-1;
   	}
@@ -74,7 +74,7 @@ function previous(){
   		imagePosition=5;
   	}
   	picture.src=slides[imagePosition].image;
-  	imageLegend=slides[imagePosition].legend;
+  	imageLegend.textContent=slides[imagePosition].legend;
 }
 
 // avancer
@@ -86,7 +86,7 @@ function previous(){
   		imagePosition=0;
   	}
   	picture.src=slides[imagePosition].image;
-  	imageLegend=slides[imagePosition].legend;
+  	imageLegend.textContent=slides[imagePosition].legend;
   }
 
 // choix aléatoire d'une photo
@@ -101,7 +101,7 @@ function previous(){
   	imagePosition=newStart;
   	
   	picture.src=slides[imagePosition].image;
-  	imageLegend=slides[image].legend;		
+  	imageLegend.textContent=slides[image].legend;		
   }
 
 

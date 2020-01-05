@@ -13,7 +13,7 @@ var picture;
 var imageLegend;
 var start;
 var imagePosition=0;
-var pos=0;
+var pos=0; // indique si statut carroussel ON ou OFF
 var btnPlay;
 var slides =
 [
@@ -44,7 +44,6 @@ function show(){
 	toolbar.classList.toggle('display');
 }
 
-// 
 function round(){
 	imagePosition++;
   	picture.src=slides[imagePosition].image;
@@ -58,14 +57,14 @@ function round(){
  //demarrer carrousel		
 function playing(){	
 	start=setInterval(round,2500);
-	pos=1;
+	pos=1; // ON
 }
 
 // arrêter Carrousel
 
 function stop(){
 	clearInterval(start);
-	pos=0;
+	pos=0; // OFF
 }
  // reculer 		
 function previous(){
@@ -94,6 +93,7 @@ function previous(){
   function randomFunction(){
   	stop();
     	var newStart;
+	  //boucle continue à s'exécuter jusqu'à avoir une position d'image différente de celle affichée
   	do{
   		newStart=Math.floor(Math.random() * 6);
   	}while(newStart===imagePosition)
@@ -111,17 +111,18 @@ function previous(){
 /*************************************************************************************************/
 showToolbar.addEventListener('click', show);
 play.addEventListener('click', function(){
-		if(pos===1){
-			stop();
-			btnPlay.classList.add('fa-play');
-			btnPlay.classList.remove('fa-pause');
-		}else{
-			playing();
-			btnPlay.classList.remove('fa-play');
-			btnPlay.classList.add('fa-pause');
-		};
+	if(pos===1){
+		stop();
+		// changer font awesome
+		btnPlay.classList.add('fa-play');
+		btnPlay.classList.remove('fa-pause');
+	}else{
+		playing();
+		btnPlay.classList.remove('fa-play');
+		btnPlay.classList.add('fa-pause');
+	};
 });
-backward.addEventListener('click', previous)
+backward.addEventListener('click', previous);
 next.addEventListener('click',nextPhoto);
 aleatoire.addEventListener('click',randomFunction);
 

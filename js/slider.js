@@ -101,7 +101,7 @@ function previous(){
   	imagePosition=newStart;
   	
   	picture.src=slides[imagePosition].image;
-  	imageLegend.textContent=slides[image].legend;		
+  	imageLegend.textContent=slides[imagePosition].legend;		
   }
 
 

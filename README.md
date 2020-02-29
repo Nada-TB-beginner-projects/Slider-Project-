@@ -1,3 +1,5 @@
+![projet](slide.png)
+
 ## Enoncé
 
 Afficher un diaporama de photos avec un titre sous la forme d'un carrousel (quand on est à la fin, on revient au début et inversement).

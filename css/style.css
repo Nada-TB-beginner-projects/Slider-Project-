@@ -68,3 +68,23 @@ figcaption {
 	color:#2a8782;
 	font-weight: bold;
 }
+
+@media screen and (max-width: 763px){
+	h1{
+		font-size:1.8rem;
+	}
+	.toolbar{
+		float:none;
+		margin: 0 auto;
+		width:75%;
+	}
+	.slider{
+		float:none;
+		width:100%;
+		margin:10px auto;
+	}
+	.slider img{
+		width:100%;
+	}
+}
+	

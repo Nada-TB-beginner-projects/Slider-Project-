@@ -91,4 +91,11 @@ figcaption {
 		margin-left:15px;
 	}
 }
+@media screen and (max-width: 500px){
+	.slider img{
+		width:70%;
+		margin:0 auto;
+	}
+
+}
 	
